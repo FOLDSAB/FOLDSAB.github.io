@@ -70,7 +70,7 @@ The `dwAttributeCount`will be set to 1 since only one attribute is needed.
 
 According to the microsoft the initial call to this function will return an error by design which will return the size required to allocate enough space for the data in the `lpAttributelist` buffer and call the function again to initialize the buffer. next the [`UpdateProcThreadAttribute`](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute)function will be responsible for adding attributes to the list.
 
-![Initialize_procthread](assets/img/2024-07-16-png_spoofing_parent_process/remarks_initialize_proc_thread.png)
+![Initialize_procthread](/assets/img/2024-07-16-png_spoofing_parent_process/remarks_initialize_proc_thread.png)
 
 
 UpdateProcThreadAttribute
