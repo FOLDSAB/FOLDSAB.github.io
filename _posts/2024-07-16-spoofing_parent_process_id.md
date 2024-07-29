@@ -20,7 +20,7 @@ Creating a process
 
 To spoof a process PPID, we first need to create a process using the [CreateProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw) WinAPI with the `EXTENDED_STARTUPINFO_PRESENT` flag set in the `dwCreationFlags` parameter. According to Microsoft documentation, this requires a [STARTUPINFOEX](https://learn.microsoft.com/en-us/windows/win32/api/winbase/ns-winbase-startupinfoexw) structure in the `lpStartupInfo` parameter.
 
-![Extended_startup](assets/lib/2024-07-16-png_spoofing_parent_process/startupinfo_present.png)
+![Extended_startup](/assets/img/2024-07-16-png_spoofing_parent_process/startupinfo_present.png)
 
 STARTUPINFOEX structure
 -----------------------
@@ -70,7 +70,7 @@ The `dwAttributeCount`will be set to 1 since only one attribute is needed.
 
 According to the microsoft the initial call to this function will return an error by design which will return the size required to allocate enough space for the data in the `lpAttributelist` buffer and call the function again to initialize the buffer. next the [`UpdateProcThreadAttribute`](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute)function will be responsible for adding attributes to the list.
 
-![Initialize_procthread]()
+![Initialize_procthread](/_site/assets/img/2024-07-16-png_spoofing_parent_process/remarks_initialize_proc_thread.png)
 
 
 UpdateProcThreadAttribute
