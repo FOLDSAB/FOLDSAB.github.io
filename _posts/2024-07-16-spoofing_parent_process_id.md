@@ -121,7 +121,7 @@ parameters:
 *   **hnewprocess**: A pointer to the handle which receives handle to the newly created process.
 *   **dwnewPID**: A pointer to the PID which receives PID of the newly created process.
 
-```C
+```c
 
 BOOL ParentPIDSpoofing(handle hprocess, LPWSTR newprocessname, HANDLE* hnewprocess, DWORD *dwnewPID) {
  STARTUPINFOEXW SI = { 0 };
