@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Spoofing Parent Process ID (PPID)"
-date: 2024-07-16 :00:00 +0000
+date: 2024-07-16 09:49:00 +0000
 tags: [Malware Development]
 categories: [Malware Development]
 ---
