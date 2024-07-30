@@ -6,7 +6,7 @@ tags: [Malware Development]
 categories: [Malware Development]
 ---
 
-# Spoofing Parent Process ID (PPID)
+<!-- # Spoofing Parent Process ID (PPID) -->
 
 
 Parent Process ID (PPID) spoofing is a technique used to manipulate the relationship between a child process and its parent process. This makes it appear as though the child process was initiated by a different, legitimate process.
