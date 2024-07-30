@@ -11,6 +11,7 @@ categories: [Malware Development]
 
 Parent Process ID (PPID) spoofing is a technique used to manipulate the relationship between a child process and its parent process. This makes it appear as though the child process was initiated by a different, legitimate process.
 
+
 This can be achieved by modifying the parent process ID, making it appear as though the process originated from a trusted source. For example, an Excel sheet spawning a \`cmd.exe\` process would typically raise suspicions with security solutions, but \`svchost.exe\` spawning a \`cmd.exe\` would not.
 
 Let’s explore how to spoof the Parent Process ID (PPID) of a process.
