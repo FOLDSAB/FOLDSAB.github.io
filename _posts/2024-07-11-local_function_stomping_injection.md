@@ -14,7 +14,7 @@ Function Stomping
 
 Function stomping typically refers to overwriting the code or data of a function with different content in its memory space. This can be done to modify the behavior of the function to run as intended by the programmer.
 
-for our purpose of stomping, we will use [MessageBoxA](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messageboxa#remarks) which would be a better choice because this function is not widely used by operating system or other services. As per Microsoft Documentation MessageBoxA is exported using User32.dll
+for our purpose of stomping, we will use [MessageBoxA](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messageboxa) which would be a better choice because this function is not widely used by operating system or other services. As per Microsoft Documentation MessageBoxA is exported using User32.dll
 
 Firstly, we use msfvenom to create our calc shellcode, which we’ll use to overwrite the memory of messageboxA.
 
