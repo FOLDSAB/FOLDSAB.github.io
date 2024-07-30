@@ -161,4 +161,8 @@ Create the child process `Notepad.exe` with the parent process being `svchost.ex
 
 `NOTE: svchost.exe is running with normal privileges.`
 
+![process_creation](/assets/img/2024-07-16-png_spoofing_parent_process/1_vy-QDjqiGpMeHXHAu_D4xw.webp)
+
 `Notepad.exe` appears to be spawned by `svchost.exe` .
+
+![Parent_process](/assets/img/2024-07-16-png_spoofing_parent_process/1_vy-QDjqiGpMeHXHAu_D4xw.webp)
