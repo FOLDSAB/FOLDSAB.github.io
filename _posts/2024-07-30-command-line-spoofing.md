@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "command line spoofing"
+title: "Command Line Spoofing"
 date: 2024-07-30 09:49:00 +0000
 tags: [Malware Development]
 categories: [Malware Development]
