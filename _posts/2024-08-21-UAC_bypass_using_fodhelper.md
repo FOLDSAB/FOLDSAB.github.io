@@ -229,3 +229,15 @@ if the above steps were simply followed then you might find that `Windows Defend
 
 ![Defender_trigger](/assets/img/UAC_bypass_using_fodhelper/Defender_threat_block.png)
 
+
+To keep things under the radar, just make a copy of `cmd.exe` from `C:\Windows\System32` and give it a new name something less obvious. This simple trick can help avoid detection.
+
+{%
+  include embed/video.html
+  src='./assets/img/UAC_bypass_using_fodhelper/bypass.mp4'
+  title='Defender bypass'
+  autoplay=true
+  loop=true
+  muted=true
+%}
+
