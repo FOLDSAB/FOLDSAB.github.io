@@ -1,0 +1,154 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Utsab Adhikari</title>
+  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2024-11-30T09:12:58+05:45</updated>
+  <author>
+    <name>Utsab Adhikari</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
+  <rights> © 2024 Utsab Adhikari </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Analysis of Macro-Embedded Excel File</title>
+    <link href="http://localhost:4000/posts/Analaysis_of_Macro-Embeeded-Excel-File/" rel="alternate" type="text/html" title="Analysis of Macro-Embedded Excel File" />
+    <published>2024-11-28T15:34:00+05:45</published>
+  
+    <updated>2024-11-30T09:09:02+05:45</updated>
+  
+    <id>http://localhost:4000/posts/Analaysis_of_Macro-Embeeded-Excel-File/</id>
+    <content src="http://localhost:4000/posts/Analaysis_of_Macro-Embeeded-Excel-File/" />
+    <author>
+      <name>Utsab Adhikari</name>
+    </author>
+
+  
+    
+    <category term="Malware Analysis" />
+    
+  
+
+  <summary>We are going to carefully examine the Excel file and the macro it contains. Our goal is to study the macro closely to see how it behaves when the file is opened. We will look for signs that the macro might try to connect to external servers, steal sensitive data, or perform any harmful actions. By doing this, we aim to understand how the malware works and identify any risks it might pose.
+
+You ...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>UAC bypass using fodhelper</title>
+    <link href="http://localhost:4000/posts/UAC_bypass_using_fodhelper/" rel="alternate" type="text/html" title="UAC bypass using fodhelper" />
+    <published>2024-08-21T15:34:00+05:45</published>
+  
+    <updated>2024-08-22T22:02:00+05:45</updated>
+  
+    <id>http://localhost:4000/posts/UAC_bypass_using_fodhelper/</id>
+    <content src="http://localhost:4000/posts/UAC_bypass_using_fodhelper/" />
+    <author>
+      <name>Utsab Adhikari</name>
+    </author>
+
+  
+    
+    <category term="Malware Development" />
+    
+  
+
+  <summary>User Account Control (UAC) is a crucial security feature in Windows designed to prevent unauthorized changes to the operating system. However, vulnerabilities in UAC can be exploited to escalate privileges. One common method for such exploitation involves fodhelper.exe. This post will explore how fodhelper.exe can be used to bypass UAC and how this technique can be implemented by malware to esc...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Windows Core Processes</title>
+    <link href="http://localhost:4000/posts/Windows_core_processes/" rel="alternate" type="text/html" title="Windows Core Processes" />
+    <published>2024-08-09T15:34:00+05:45</published>
+  
+    <updated>2024-08-09T15:34:00+05:45</updated>
+  
+    <id>http://localhost:4000/posts/Windows_core_processes/</id>
+    <content src="http://localhost:4000/posts/Windows_core_processes/" />
+    <author>
+      <name>Utsab Adhikari</name>
+    </author>
+
+  
+    
+    <category term="Windows Internals" />
+    
+  
+
+  <summary>Windows core processes are fundamental components of the operating system that manage various essential functions to keep computer running smoothly. These processes handle everything from starting up system to managing hardware and software operations. Here’s a brief overview of some key core processes in Windows and how you can detect anomalies within them:
+
+
+Image source: dfir-world.tumblr.co...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Command Line Spoofing</title>
+    <link href="http://localhost:4000/posts/command-line-spoofing/" rel="alternate" type="text/html" title="Command Line Spoofing" />
+    <published>2024-07-30T15:34:00+05:45</published>
+  
+    <updated>2024-08-11T01:31:34+05:45</updated>
+  
+    <id>http://localhost:4000/posts/command-line-spoofing/</id>
+    <content src="http://localhost:4000/posts/command-line-spoofing/" />
+    <author>
+      <name>Utsab Adhikari</name>
+    </author>
+
+  
+    
+    <category term="Malware Development" />
+    
+  
+
+  <summary>Command line spoofing is a technique where the instructions given to a program through the command line are altered or replaced. To make this clearer, let’s break it down:
+
+When a program runs, it often needs specific details or instructions to work correctly. These instructions are provided through the command line a way to type in commands and arguments that the operating system uses to run t...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Local Function Stomping Injection</title>
+    <link href="http://localhost:4000/posts/local_function_stomping_injection/" rel="alternate" type="text/html" title="Local Function Stomping Injection" />
+    <published>2024-07-29T19:32:00+05:45</published>
+  
+    <updated>2024-07-30T13:22:59+05:45</updated>
+  
+    <id>http://localhost:4000/posts/local_function_stomping_injection/</id>
+    <content src="http://localhost:4000/posts/local_function_stomping_injection/" />
+    <author>
+      <name>Utsab Adhikari</name>
+    </author>
+
+  
+    
+    <category term="Malware Development" />
+    
+  
+
+  <summary>Function Stomping
+
+Function stomping typically refers to overwriting the code or data of a function with different content in its memory space. This can be done to modify the behavior of the function to run as intended by the programmer.
+
+for our purpose of stomping, we will use MessageBoxA which would be a better choice because this function is not widely used by operating system or other serv...</summary>
+
+  </entry>
+
+</feed>
+
+
