@@ -12,5 +12,5 @@ We are going to carefully examine the Excel file and the macro it contains. Our 
 You can find the detailed analysis in the embedded PDF below:
 
 
-<embed src="/assets/lib/Analysis_of_Macro-Embedded_Excel_Files.pdf" type="application/pdf" width="850" height="900">
+<embed src="/assets/img/Analysis_of_Macro-Embedded_Excel_Files/Analysis_of_Macro-Embedded_Excel_Files.pdf" type="application/pdf" width="850" height="900">
 
