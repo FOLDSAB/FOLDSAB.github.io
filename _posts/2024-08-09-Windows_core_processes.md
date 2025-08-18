@@ -215,6 +215,7 @@ Local Session Manager (`LSM`) is responsible for managing user sessions, includi
 - **Parent Process**: `wininit.exe`
 - **Number of Instances**: Only one
 
+
 ### **Abnormal Behavior**
 - **Image Path**: Any path other than `%SystemRoot%\System32\lsm.dll` (In Windows 10, it should appear as a service DLL)
 - **User Account**: Any account other than `NT AUTHORITY\SYSTEM`
