@@ -27,7 +27,7 @@ The path of the process was already discovered while looking for "Temp" in Q1. T
 
 The malware attempts to connect to a Command and Control server. Using `windows.netscan` to check network connections, it was found that `lssass.exe` was communicating with the external IP `47.75.84.12` on port 80.
 
-![netscan.png](/assets/img/Amadey_lab/netscan.png)
+![netscan.png](/assets/img/Amadey_Lab/netscan.png)
 
 ---
 
@@ -35,11 +35,11 @@ The malware attempts to connect to a Command and Control server. Using `windows.
 
 To check which files the malware is fetching, we need to see its HTTP requests to the C2C server on port 80. Using `windows.memmap`, the process was dumped and then strings were extracted to view the requests.
 
-![dump_process.png](/assets/img/Amadey_lab/dump_process.png)
+![dump_process.png](/assets/img/Amadey_Lab/dump_process.png)
 
 From the dumped process (`pid.2748.dmp`), two GET requests were found for `cred64.dll` and `clip64.dll`. So, the malware is trying to fetch **two distinct files**.
 
-![request.png](/assets/img/Amadey_lab/request.png)
+![request.png](/assets/img/Amadey_Lab/request.png)
 
 ---
 
@@ -47,7 +47,7 @@ From the dumped process (`pid.2748.dmp`), two GET requests were found for `cred6
 
 These files must have been executed by the malware or its child process. Using `windows.cmdline` to inspect the command lines, it was found that `rundll32.exe` is executing `clip64.dll`. This also revealed the **full path of the downloaded file**.
 
-![rundll_32_commandline.png](/assets/img/Amadey_lab/rundll_32_commandline.png)
+![rundll_32_commandline.png](/assets/img/Amadey_Lab/rundll_32_commandline.png)
 
 ---
 
@@ -61,6 +61,6 @@ This was already identified in Q5: the child process used to execute the files i
 
 To find other locations where the malware may persist, `windows.filescan` can be used to search the filesystem. By searching for `lssass.exe`, we can see additional paths where the malware copied itself for persistence.
 
-![last_one.png](/assets/img/Amadey_lab/last_one.png)
+![last_one.png](/assets/img/Amadey_Lab/last_one.png)
 
 
