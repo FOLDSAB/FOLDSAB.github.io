@@ -60,7 +60,6 @@ _Eminence Ways_
 
 
 
-
 ## CyberDefenders Profile
 
 <script src="https://cyberdefenders.org/p/FOLDSAB/badge"></script>
