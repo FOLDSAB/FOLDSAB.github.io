@@ -44,7 +44,7 @@ _Eminence Ways_
 
 **Softwarica College of IT & E-Commerce**  
 **BSc (Hons) in Ethical Hacking & Cyber Security**  
-**2025 (Expected Graduation)**  
+**Graduated 2025**  
 • Relevant Coursework: Web Application Attacks, Reverse Engineering, Network Security & Penetration Testing, Programming & Algorithms, Basic Cryptography & Encryption  
 
 **Advance Academy Secondary School**  
@@ -57,3 +57,10 @@ _Eminence Ways_
 
 - **Certified Cyber Defender (CCD)**  
   Gained hands-on expertise in threat hunting, incident response, digital forensics, malware analysis, and cyber threat intelligence.
+
+
+
+
+## CyberDefenders Profile
+
+<script src="https://cyberdefenders.org/p/FOLDSAB/badge"></script>
