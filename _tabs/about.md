@@ -6,26 +6,13 @@ order: 4
 
 # Utsab Adhikari
 
-📍 Dillibazar, Kathmandu  
-
 --- 
 
 ## Profile
 
-Passionate cybersecurity enthusiast with hands-on experience in threat detection, malware analysis, and digital forensics. Adept at analyzing network traffic, leveraging SIEM tools, and applying security best practices to identify vulnerabilities. Committed to staying at the forefront of emerging security trends and contributing to a safer digital landscape.
-
 ---
 
 ## Technical Expertise
-
-- Network traffic analysis
-- Windows and Linux systems
-- Triage of Windows endpoints with Sysinternals suite
-- Familiar with red team tools and tactics (privilege escalation, persistence, lateral movement)
-- MITRE ATT&CK Framework
-- Binary analysis
-- SIEMs (ELK) for log aggregation and analysis
-- Digital forensics and incident response
 
 ---
 
@@ -43,7 +30,7 @@ _Eminence Ways_
 ## Education
 
 **Softwarica College of IT & E-Commerce**  
-**BSc (Hons) in Ethical Hacking & Cyber Security**  
+**BSc (Hons) in Ethical Hacking & Cyber Security**  (Awarded by Coventry University)
 **Graduated 2025**  
 • Relevant Coursework: Web Application Attacks, Reverse Engineering, Network Security & Penetration Testing, Programming & Algorithms, Basic Cryptography & Encryption  
 
