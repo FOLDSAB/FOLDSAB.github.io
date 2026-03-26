@@ -204,7 +204,7 @@ Decoding the payload
 
 ![decoded payload](/assets/img/payload_staging_webserver/Decoded%20shellcode.png)
 
-Exectutin shellcode using thread
+Exectuting shellcode using thread
 
 ![calc_execution](/assets/img/payload_staging_webserver/calculator.png)
 
