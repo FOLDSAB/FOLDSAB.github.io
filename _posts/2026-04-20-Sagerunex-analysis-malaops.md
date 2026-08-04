@@ -124,15 +124,15 @@ Initially, the `breaker` is `0` and it is only used after the initialization, as
 
 The line of code responsible for the beacon lies in function `FUN_18000339c`, which can be seen in the screenshot below, which reveals (well, that is how I guessed).  
 
-![beaconfunccode](/assets/img/Sagerunex_analysis/calltreebeacon.png)
+![beaconfunccode](/FOLDSAB.github.io/assets/img/Sagerunex_analysis/calltreebeacon.png)
 
 Let’s get back to our `do...while(true)` loop. The function `FUN_18000339c` is called after meeting various conditions for the malware. When it reaches the point of calling, the beacon starts.
 
-![beaconstarts](/assets/img/Sagerunex_analysis/beacon_starts.png)
+![beaconstarts](/FOLDSAB.github.io/assets/img/Sagerunex_analysis/beacon_starts.png)
 
 If the function succeeds, then the value of `time` is set to `0x1e`, i.e. `30` in decimal. Then `WaitForSingleObject` is called with the parameter `dwMilliseconds` as `time * 60000`. This means the program is going to wait, or hold execution for `30 min * 60000 milliseconds`, i.e. 30 minutes. After that, the value is added to `breaker`, and the condition is checked: `if (0x2cf < breaker)`. This means the whole beacon has to continue for `(30 min * 24 times)` minutes just to make `breaker` greater than `0x2cf`.
 
-![timecalculated](/assets/img/Sagerunex_analysis/time_waitforsignal.png)
+![timecalculated](/FOLDSAB.github.io/assets/img/Sagerunex_analysis/time_waitforsignal.png)
 
 
 ### Q10. How many C2 servers does the malware cycle through?
@@ -141,7 +141,7 @@ The answer to this question is `5`.
 
 From the previous question, we understood how the C2 beacon timing works. Inside that logic, the beacon function `FUN_18000339c` is called from inside a while loop.
 
-![while_loop](/assets/img/Sagerunex_analysis/while_loop_for_beacon.png)
+![while_loop](/FOLDSAB.github.io/assets/img/Sagerunex_analysis/while_loop_for_beacon.png)
 
 If we take a closer look at the code, `ivar20` is assigned using:
 
@@ -167,3 +167,6 @@ ivar1 = ivar20 - (ivar20 + 5)
 Since `ivar1` is always `< 0` , the condition `ivar1 < 0` is always true, allowing the beacon loop to continue running.
 
 
+### Q11. What is the initial retry interval (in minutes) when C2 connection fails?
+
+For this question 
