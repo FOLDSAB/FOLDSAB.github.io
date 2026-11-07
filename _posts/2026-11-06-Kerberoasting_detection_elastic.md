@@ -149,7 +149,7 @@ The command returns ticket data that can be used for offline password cracking.
 
 
 
-## Detction
+## Detection
 
 In a large organization, thousands of Kerberos service ticket requests can occur during normal activity. Finding a suspicious request among them can be difficult.
 
