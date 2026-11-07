@@ -7,7 +7,7 @@ tags: [kerberoasting, kerberos, elastic, kibana, detection, active-directory]
 description: "Setting up a Kerberoasting test in my Active Directory lab and detecting it using Windows Event ID 4769 in Elastic Kibana."
 ---
 
-# Understanding and Detecting Kerberoasting in My SOC Home Lab
+
 
 ## Introduction
 
@@ -28,7 +28,7 @@ The main participants are:
 
 The AS and TGS are both part of the **Key Distribution Center (KDC)** on the domain controller.
 
-![Kerberos authentication flow](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/Kerberos_authentication.png)
+![Kerberos authentication flow](/assets/img/kerberoasting_detection_home_lab/Kerberos_authentication.png)
 
 ### 1. Client Requests a TGT — AS-REQ / AS-REP
 
@@ -108,7 +108,7 @@ Get-ADUser svc_sql_lab -Properties ServicePrincipalName |
   Format-List SamAccountName, Enabled, ServicePrincipalName
 ```
 
-![Check SPN](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/check_spn.png)
+![Check SPN](/assets/img/kerberoasting_detection_home_lab/check_spn.png)
 
 ## Running the Kerberoasting Test
 
@@ -121,7 +121,7 @@ hostname
 whoami
 ```
 
-![hostname_whoami](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/hostname_whoami.png)
+![hostname_whoami](/assets/img/kerberoasting_detection_home_lab/hostname_whoami.png)
 
 ### Discovering Registered SPNs
 
@@ -131,7 +131,7 @@ I queried the domain for registered SPNs and found the SQL SPN linked to `svc_sq
 setspn -T bold.home.lab -Q */*
 ```
 
-![find_spn](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/find_SPN.png)
+![find_spn](/assets/img/kerberoasting_detection_home_lab/find_SPN.png)
 
 ### Requesting the Service Ticket
 
@@ -141,11 +141,11 @@ I used Rubeus to request a service ticket for `svc_sql_lab`:
 & 'C:\LabTools\Rubeus.exe' kerberoast /user:svc_sql_lab /nowrap
 ```
 
-![kerber_roasted](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/kerberoasted.png)
+![kerber_roasted](/assets/img/kerberoasting_detection_home_lab/kerberoasted.png)
 
 The command returns ticket data that can be used for offline password cracking.
 
-![pass_cracked](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/cracked.png)
+![pass_cracked](/assets/img/kerberoasting_detection_home_lab/cracked.png)
 
 
 
@@ -165,13 +165,13 @@ event.code : "4769"
 Event ID `4769` means “A Kerberos service ticket was requested.” It corresponds to the TGS exchange shown in steps 3 and 4 of the authentication diagram. The initial TGT request is recorded separately as Event ID `4768`.
 
 
-![numbers_kerberos](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/numbers_kerberos_event.png)
+![numbers_kerberos](/assets/img/kerberoasting_detection_home_lab/numbers_kerberos_event.png)
 
 Windows requests service tickets when users or computers access domain services, such as file shares or SQL servers. A `4769` event alone does not indicate Kerberoasting.
 
 Lets take a look at below event
 
-![normal_kerberos](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/Normal_kerberoas_event.png)
+![normal_kerberos](/assets/img/kerberoasting_detection_home_lab/Normal_kerberoas_event.png)
 
 This event shows `DC03$@COLD.HOME.LAB` requesting a service ticket for `DC01$`. The ticket encryption type is `0x12`, which means **AES256-CTS-HMAC-SHA1-96**.
 
@@ -194,7 +194,7 @@ To look for possible Kerberoasting in this RC4-based test, I checked for:
 
 Now, let’s look at the event generated during my Kerberoasting test.
 
-![actual_kerberoasting](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/actual_kerberoasting.png)
+![actual_kerberoasting](/assets/img/kerberoasting_detection_home_lab/actual_kerberoasting.png)
 
 The requesting account is `labuser@BOLD.HOME.LAB`, and the service name is `svc_sql_lab`. Neither ends with `$`. The ticket encryption type is `0x17` (RC4), matching all three conditions above.
 
@@ -214,16 +214,16 @@ and not related.user: *$
 and not service.name: *$
 ```
 
-![rule_editing](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/rule_editing.png)
+![rule_editing](/assets/img/kerberoasting_detection_home_lab/rule_editing.png)
 
 I repeated the Kerberoasting test to check the rule. The matching ticket request generated an alert.
 
-![alert](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/alert.png)
+![alert](/assets/img/kerberoasting_detection_home_lab/alert.png)
 
 
 The alert shows the account, target service, and source IP needed to begin the investigation.
 
-![alert_overview](/FOLDSAB.github.io/assets/img/kerberoasting_detection_home_lab/alert_overview.png)
+![alert_overview](/assets/img/kerberoasting_detection_home_lab/alert_overview.png)
 
 
 *Another option is to create a decoy service account with an SPN and a strong password. Since this account is not used by any real service, a ticket request for it would be unusual. If a ticket is requested, it could trigger an alert and help detect possible Kerberoasting with fewer false positives.*
