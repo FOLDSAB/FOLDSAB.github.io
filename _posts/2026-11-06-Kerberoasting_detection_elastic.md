@@ -214,7 +214,7 @@ and not related.user: *$
 and not service.name: *$
 ```
 
-*This rule detected my RC4-based test. It can miss Kerberoasting that uses AES or requests made by computer accounts.”*
+*This rule detected my RC4-based test. It can miss Kerberoasting that uses AES or requests made by computer accounts.*
 
 ![rule_editing](/assets/img/kerberoasting_detection_home_lab/rule_editing.png)
 
