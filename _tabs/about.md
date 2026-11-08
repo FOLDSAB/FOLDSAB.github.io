@@ -36,7 +36,7 @@ Eminence Ways | Kathmandu, Nepal | Sep 2023 - Jan 2024
 
 ### Certified CyberDefender Level 1 (CCDL1)
 
-CyberDefenders | [Verify credential](https://www.credly.com/badges/96298660-9c44-4adc-ab67-916522d2514f)
+CyberDefenders | 2026 | [Verify credential](https://www.credly.com/badges/96298660-9c44-4adc-ab67-916522d2514f)
 
 - Investigated security alerts by analyzing logs, phishing emails, and network traffic.
 
