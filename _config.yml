@@ -16,10 +16,10 @@ timezone: #Asia/Katmandu
 
 title: Utsab Adhikari # the main title
 
-tagline: A Site for my blog posts. # it will display as the sub-title
+tagline: Cyber Defense graduate student | SOC labs, digital forensics, and malware analysis # it will display as the sub-title
 
 description: # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Technical portfolio of Utsab Adhikari, covering security monitoring, digital forensics, and malware analysis.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -39,8 +39,8 @@ social:
   email: adhikariutshav999@hotmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
-    -  https://github.com/FOLDSAB # change to your github homepage
+    - https://github.com/FOLDSAB
+    - https://www.linkedin.com/in/utsab-adhikari118/
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
